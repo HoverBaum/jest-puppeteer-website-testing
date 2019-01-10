@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Testing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-family: sans-serif">
+
+  <h1>Testing page</h1>
+
+  <!-- Counter interface -->
+  <button data-test="button-increment" id="js-increment">Increment</button>
+  <p>Current count: <span data-test="count-output" id="js-count"></span></p>
+  
+  <!-- Button to show a message -->
+  <button data-test="button-display" id="js-display">Display Message</button>
+  
+  <script>
+
+    // --- Counter ---
+    let count = 0    
+    const incrementBtn = document.getElementById('js-increment')
+    const countSpan = document.getElementById('js-count')
+
+    incrementBtn.addEventListener('click', () => {
+      count += 1
+      countSpan.innerHTML = count
+    })
+
+    countSpan.innerHTML = count
+
+    // --- Display ---
+    document.getElementById('js-display').addEventListener('click', () => {
+      const messageContainer = document.createElement('p')
+      messageContainer.innerHTML = 'A message here'
+      messageContainer.setAttribute('data-test', 'display')
+      document.body.appendChild(messageContainer)
+    })
+  </script>
+</body>
+</html>

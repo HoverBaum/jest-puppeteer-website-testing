@@ -1,0 +1,21 @@
+{
+  "name": "puppet-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:visual": "env SHOW_BROWSER=t npm test",
+    "start": "live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "live-server": "^1.2.1",
+    "puppeteer": "^1.11.0"
+  }
+}
